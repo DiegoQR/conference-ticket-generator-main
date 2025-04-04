@@ -4,8 +4,11 @@ function ImputDragAndDrop({children, ...rest}) {
     return (<>
         <label className='flex flex-col gap-5 text-2xl font-bold'>
             <span>{children}</span>
-            <input className='h-50 bg-neutral-100/20 rounded-xl w-full hover:cursor-pointer border-3 border-neutral-500
-            border-dashed placeholder:hidden' {...rest}/>
+            <div id="drag-and-drop-zone" className='w-full h-64 border-2 border-dashed border-neutral-300 rounded-lg flex items-center justify-center 
+            bg-neutral-300/20 hover:bg-neutral-300/40'>
+                <img src='./assets/images/icon-upload.svg' alt='Upload Icon' 
+                    className='p-2 w-16 aspect-square border-neutral-500 border-2 rounded-lg bg-neutral-300/20'/>
+            </div>
         </label>
     </>);
 }
