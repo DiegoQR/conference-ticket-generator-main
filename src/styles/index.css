@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+@theme {
+  --font-inconsolata: "Inconsolata", monospace;
+
+  --color-neutral-0: hsl(0, 0%, 100%);
+  --color-neutral-300: hsl(252, 6%, 83%);
+  --color-neutral-500: hsl(245, 15%, 58%);
+  --color-neutral-700: hsl(245, 19%, 35%);
+  --color-neutral-900: hsl(248, 70%, 10%);
+
+  --color-orange-500: hsl(7, 88%, 67%);
+  --color-orange-700: hsl(7, 71%, 60%);
+
+}
+
+h1 {
+  @apply text-3xl font-extrabold;
+}
+
+h2 {
+  @apply text-xl font-light;
+}
+
