@@ -15,7 +15,7 @@ function Form() {
         console.log("File dropped!")
         e.preventDefault();
         const file = e.dataTransfer.files[0];
-        if (file && file.type.match('image.jpg|image.png')) {
+        if (file && file.type.match('image.jpg, image.png')) {
             setDataFrom({...dataform, avatar: URL.createObjectURL(file)});
         }
     }
