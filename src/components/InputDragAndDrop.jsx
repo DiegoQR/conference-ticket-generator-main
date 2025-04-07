@@ -88,8 +88,8 @@ function ImputDragAndDrop({children, accept, name, onFileUpdate, ...rest}) {
                     <>
                         <img src={previewUrl} alt="Preview" className='w-20 aspect-square rounded-lg border-2 border-neutral-500 mb-5'/>
                         <div className='flex gap-5'>
-                            <button className='bg-neutral-300/10 rounded-xl text-lg underline font-light px-3 py-1' onClick={() => setPreviewUrl(null)}>Remove Image</button>
-                            <button className='bg-neutral-300/10 rounded-xl text-lg font-light px-3 py-1' onClick={triggerFileInput}>Change Image</button>
+                            <button className='bg-neutral-300/10 rounded-xl text-lg underline font-light px-3 py-1' onClick={triggerFileInput}>Remove Image</button>
+                            <button className='bg-neutral-300/10 rounded-xl text-lg font-light px-3 py-1' onClick={() => setPreviewUrl(null)}>Change Image</button>
                         </div>
                     </>
                     :

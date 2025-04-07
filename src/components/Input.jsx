@@ -5,8 +5,10 @@ function Input(props) {
     return (<>
         <label htmlFor={name} className='flex flex-col gap-3 text-2xl font-bold'>
                 <span>{children}</span>
-                <input id={name} name={name} 
-                    className='w-full border-1 border-neutral-300 rounded-lg p-2 bg-neutral-300/20 hover:bg-neutral-300/40' 
+                <input 
+                    id={name} 
+                    name={name} 
+                    className='w-full border-1 border-neutral-300 rounded-lg p-2 bg-neutral-300/20 autofill:bg-neutral-300/20 hover:bg-neutral-300/40 ' 
                     {...rest}
                     />
         </label>
