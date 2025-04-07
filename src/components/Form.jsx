@@ -1,9 +1,12 @@
-import React, { useState, useEffect, use } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
+
 import Input from './Input';
 import Button from './Button';
 import InuptDragAndDrop from './InputDragAndDrop';
 
 function Form() {
+    const navigate = useNavigate();
     const [dataform, setDataFrom] = useState({
         fullName: '',
         emailAddress: '',
@@ -11,21 +14,18 @@ function Form() {
         avatar: null
     });
 
-    function onDrop(e) {
-        console.log("File dropped!")
+    const onSubmit = (e) => {
         e.preventDefault();
-        const file = e.dataTransfer.files[0];
-        if (file && file.type.match('image.jpg, image.png')) {
-            setDataFrom({...dataform, avatar: URL.createObjectURL(file)});
-        }
+        console.log(dataform);
+        navigate('/ticket', { state: dataform });
     }
+
     return (<>
-        <form className='flex flex-col gap-5'>
+        <form className='flex flex-col gap-5' onSubmit={onSubmit}>
             <InuptDragAndDrop 
                 name="drag-and-drop-input" 
                 accept="image/png, image/jpg"
-                onDrop={onDrop}
-                onDragOver={(e) => e.preventDefault()}
+                onFileUpdate={(file) => setDataFrom({...dataform, avatar: file})}
             >
                 Upload Avatar
             </InuptDragAndDrop>
