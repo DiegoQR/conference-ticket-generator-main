@@ -23,3 +23,12 @@ h2 {
   @apply text-xl font-light;
 }
 
+@utility writing-vertical {
+  writing-mode: vertical-lr;
+}
+
+@utility text-linear-gradient {
+  background: linear-gradient(to right, hsl(7, 88%, 67%) 40%, hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

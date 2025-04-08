@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route} from 'react-router';
 
 import React from 'react';
-import Layout from './components/Layout';
-import Ticket from './components/Ticket';
+import TicketForm from './pages/TicketForm';
+import TicketShown from './pages/TicketShown';
 
 function App() {
 
@@ -10,8 +10,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />} />
-          <Route path="/ticket" element={<Ticket />} />
+          <Route path="/" element={<TicketForm />} />
+          <Route path="/ticket" element={<TicketShown />} />
         </Routes>
       </BrowserRouter>
     </>
