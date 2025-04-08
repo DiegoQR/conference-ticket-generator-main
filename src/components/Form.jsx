@@ -16,7 +16,6 @@ function Form() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(dataform);
         navigate('/ticket', { state: dataform });
     }
 
