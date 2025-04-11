@@ -16,11 +16,11 @@
 }
 
 h1 {
-  @apply text-3xl font-extrabold;
+  @apply text-3xl font-extrabold md:text-5xl;
 }
 
 h2 {
-  @apply text-xl font-light;
+  @apply text-xl font-light md:text-2xl md:max-w-xl;
 }
 
 @utility writing-vertical {

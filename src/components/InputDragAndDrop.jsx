@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef } from 'react';
 
-function ImputDragAndDrop({children, accept, name, onFileUpdate, ...rest}) {
+function InputDragAndDrop({children, accept, name, onFileUpdate, ...rest}) {
     const [isDragging, setIsDragging] = useState(false);
     const [previewUrl, setPreviewUrl] = useState(null);
     const [error, setError] = useState(null);
@@ -109,4 +109,4 @@ function ImputDragAndDrop({children, accept, name, onFileUpdate, ...rest}) {
     </>);
 }
 
-export default ImputDragAndDrop;
+export default InputDragAndDrop;

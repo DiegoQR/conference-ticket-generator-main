@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 
 import Input from './Input';
 import Button from './Button';
-import InuptDragAndDrop from './InputDragAndDrop';
+import InputDragAndDrop from './InputDragAndDrop';
 
 function Form() {
     const navigate = useNavigate();
@@ -20,14 +20,14 @@ function Form() {
     }
 
     return (<>
-        <form className='flex flex-col gap-5' onSubmit={onSubmit}>
-            <InuptDragAndDrop 
+        <form className='flex flex-col gap-5 md:mx-40' onSubmit={onSubmit}>
+            <InputDragAndDrop 
                 name="drag-and-drop-input" 
                 accept="image/png, image/jpg"
                 onFileUpdate={(file) => setDataFrom({...dataform, avatar: file})}
             >
                 Upload Avatar
-            </InuptDragAndDrop>
+            </InputDragAndDrop>
             <Input 
                 name='full-name' 
                 type="text" 
