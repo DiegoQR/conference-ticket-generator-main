@@ -7,19 +7,20 @@ import { useLocation, Link } from 'react-router';
 function TicketShown() {
     const { state } = useLocation();
     const { avatar, fullName, emailAddress, githubUsername } = state || {};
-    const [ firstName, lastName ] = fullName.split(' ');
-    const avatarUrl = URL.createObjectURL(avatar);
 
     if (!state) {
         return (
             <Layout>
                 <Header>
-                    <h1>Ticket not found</h1>
-                    <h2>Please go back to the <Link to="/" className='decoration-solid text-blue-500 hover:text-blue-300'>ticket form</Link></h2>
+                    <h1>Ticket not found!</h1>
+                    <h2>Please go back to the <Link to="/" className='underline text-blue-500 hover:text-blue-300'>ticket form</Link></h2>
                 </Header>
             </Layout>
         );
     }
+
+    const [ firstName, lastName ] = fullName.split(' ');
+    const avatarUrl = URL.createObjectURL(avatar);
 
     return (<>
         <Layout>
