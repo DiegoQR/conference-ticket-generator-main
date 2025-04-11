@@ -13,10 +13,60 @@ function Form() {
         githubUsername: '',
         avatar: null
     });
+    const [errors, setErrors] = useState({
+        fullName: null,
+        emailAddress: null,
+        githubUsername: null,
+        avatar: null
+    });
+
+    const isFormValid = () => {
+        const newErrors = {
+            fullName: '',
+            emailAddress: '',
+            githubUsername: '',
+            avatar: null
+        };
+
+        let isValid = true;
+
+        // Validate full name
+        if (dataform.fullName === '')  {
+            newErrors.fullName = 'Full name is required';
+            isValid = false;
+        }
+
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(dataform.emailAddress)) {
+            newErrors.emailAddress = 'Please enter a valid email address';
+            isValid = false;
+        }
+
+        // Validate GitHub username
+        if (dataform.githubUsername === '') {
+            newErrors.githubUsername = 'GitHub username is required';
+            isValid = false;
+        }
+
+        // Validate avatar
+        if (!dataform.avatar) {
+            newErrors.avatar = 'Please upload an avatar';
+            isValid = false;
+        }
+
+        setErrors(newErrors);
+        return isValid;
+    }
 
     const onSubmit = (e) => {
         e.preventDefault();
-        navigate('/ticket', { state: dataform });
+        const isValid = isFormValid();
+
+        if (isValid) {
+            navigate('/ticket', { state: dataform });
+        }
+        
     }
 
     return (<>
@@ -25,6 +75,7 @@ function Form() {
                 name="drag-and-drop-input" 
                 accept="image/png, image/jpg"
                 onFileUpdate={(file) => setDataFrom({...dataform, avatar: file})}
+                errorMessage={errors.avatar}
             >
                 Upload Avatar
             </InputDragAndDrop>
@@ -35,17 +86,19 @@ function Form() {
                 enterKeyHint="next"
                 value={dataform.fullName}
                 onChange={(e) => setDataFrom({...dataform, fullName: e.target.value})}
+                error={errors.fullName}
             >
                 Full Name
             </Input>
             <Input 
                 name='email-address' 
-                type="email" 
+                type="text" 
                 placeholder="example@email.com" 
                 autoComplete="email" 
                 enterKeyHint="next"
                 value={dataform.emailAddress}
                 onChange={(e) => setDataFrom({...dataform, emailAddress: e.target.value})}
+                error={errors.emailAddress}
             >
                 Email Address
             </Input>
@@ -57,6 +110,7 @@ function Form() {
                 enterKeyHint="next"
                 value={dataform.githubUsername}
                 onChange={(e) => setDataFrom({...dataform, githubUsername: e.target.value})}
+                error={errors.githubUsername}
             >
                 GitHub Username
             </Input>
