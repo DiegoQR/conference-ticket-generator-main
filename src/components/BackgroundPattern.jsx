@@ -4,7 +4,7 @@ function BackgroundPattern() {
     return (<>
         <img id='pattern-lines' 
             src='./assets/images/pattern-lines.svg' 
-            className='absolute insert-0 -z-10 h-200 min-w-full object-cover'
+            className='absolute insert-0 -z-10 h-3/4 min-w-full object-cover'
             alt='pattern-lines'
         />
         <img id='squiggly-line'
