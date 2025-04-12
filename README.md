@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [localhost:5173](http://localhost:5173)
-- Live Site URL: [confrerece-ticket-challenge.netlify.app](https://confrerece-ticket-challenge.netlify.app)
+- Live Site URL: [conference-ticket-challenge.netlify.app](https://conference-ticket-generator-challenge.netlify.app)
 
 ## My process
 
@@ -66,7 +66,7 @@ The element that cost me more to develop was the drag and drop element, since i 
 
 Some things I want to improve an get better on are the code legibility and mantenability i understand i could decouple some functions or elements in the `InputDragAndDrop.jsx` and specially in the `Form.jsx`.
 
-Also i want to start getting the habit of doing the test cases first and implementing automatic tests to assure the QA of the page, since i been having bugs almost every time i started to develop a new feature.
+Also i want to start getting the habit of doing the test cases first and implementing automatic tests to assure the QA of the page, since i been having bugs almost every time i started to develop a new feature, some bugs there is to correct are the buttons remove and change image in the drag and drop and the fact that when you drop an image all the form resets.
 
 ### Useful resources
 
