@@ -24,7 +24,7 @@ function BackgroundPattern() {
         />
         <img id='squiggly-line-bot'
             src='/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg'
-            className='absolute -z-10 bottom-0 left-0 object-cover max-w-100 lg:max-w-150 lg:content-[url("./assets/images/pattern-squiggly-line-bottom-desktop.svg")]'
+            className='absolute -z-10 bottom-0 left-0 object-cover max-w-100 lg:max-w-150 lg:content-[url("/assets/images/pattern-squiggly-line-bottom-desktop.svg")]'
             alt='squiggly-line-bot'
         />
         
